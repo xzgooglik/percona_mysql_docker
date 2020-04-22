@@ -1,14 +1,13 @@
 # Use root/example as user/password credentials
 version: '3.1'
-
 services:
   db:
     image: percona
     environment:
-        - MYSQL_ROOT_PASSWORD=jF4#vC*VKpM5xt#)eu#
+        - MYSQL_ROOT_PASSWORD=secret
     volumes:
-       - /root/percona/my.cnf:/etc/my.cnf
-       - /root/percona/data:/var/lib/mysql        
+       - /percona_mysql/my.cnf:/etc/my.cnf
+       - /percona_mysql/data:/var/lib/mysql        
   adminer:
     image: adminer
     restart: always
